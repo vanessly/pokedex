@@ -1,0 +1,63 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+.About {
+    padding-bottom: 2rem;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    border: solid #000 3px;
+    width: 85%;
+    padding: 10px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px #999;
+    animation: slideFromLeft 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.container > img {
+    max-width: 6rem;
+    -webkit-filter: drop-shadow(3px 3px 3px #999);
+    filter: drop-shadow(3px 3px 3px #999);
+    animation: bounce 2s ease-in-out infinite;
+    transition-duration: 0.7s;
+    transition-timing-function: ease-in-out;
+}
+
+.container > img:hover {
+    rotate: 360deg;
+}
+
+.container > h1 {
+    font-size: 1.2rem;
+    text-align: left;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(3px);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px); /* Elements slide in from the left */
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+  
