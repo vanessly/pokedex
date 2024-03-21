@@ -67,7 +67,7 @@ function Grid() {
         <div className="gallery">
             <div className="card">
                 <h3>#{raichu.id}</h3>
-                <img src={raichu.image} alt="raichu" />
+                <img className="mon" src={raichu.image} alt="raichu" />
                 <h4>Raichu</h4>
                 <div class="type-icons">
                   <img src={electric} alt="electric type" />
@@ -75,7 +75,7 @@ function Grid() {
             </div>
             <div className="card">
                 <h3>#{gengar.id}</h3>
-                <img src={gengar.image} alt="gengar" />
+                <img className="mon" src={gengar.image} alt="gengar" />
                 <h4>Gengar</h4>
                 <div class="type-icons">
                   <img src={ghost} alt="ghost type" />
@@ -84,7 +84,7 @@ function Grid() {
             </div>
             <div className="card">
               <h3>#{snorlax.id}</h3>
-              <img src={snorlax.image} alt="Snorlax" />
+              <img className="mon" src={snorlax.image} alt="Snorlax" />
               <h4>Snorlax</h4>
               <div class="type-icons">
                 <img src={normal} alt="normal type" />
@@ -92,7 +92,7 @@ function Grid() {
             </div>
             <div className="card">
               <h3>#{crobat.id}</h3>
-              <img src={crobat.image} alt="Crobat" />
+              <img className="mon" src={crobat.image} alt="Crobat" />
               <h4>Crobat</h4>
               <div class="type-icons">
                 <img src={poison} alt="poison type" />
@@ -101,7 +101,7 @@ function Grid() {
             </div>
             <div className="card">
               <h3>#{azumarill.id}</h3>
-              <img src={azumarill.image} alt="Azumarill" />
+              <img className="mon" src={azumarill.image} alt="Azumarill" />
               <h4>Azumarill</h4>
               <div class="type-icons">
                 <img src={water} alt="water type" />
@@ -110,7 +110,7 @@ function Grid() {
             </div>
             <div className="card">
               <h3>#{espeon.id}</h3>
-              <img src={espeon.image} alt="Espeon" />
+              <img className="mon" src={espeon.image} alt="Espeon" />
               <h4>Espeon</h4>
               <div class="type-icons">
                 <img src={psychic} alt="psychic type" />
@@ -118,7 +118,7 @@ function Grid() {
             </div>
             <div className="card">
               <h3>#{umbreon.id}</h3>
-              <img src={umbreon.image} alt="Umbreon" />
+              <img className="mon" src={umbreon.image} alt="Umbreon" />
               <h4>Umbreon</h4>
               <div class="type-icons">
                 <img src={dark} alt="dark type" />
@@ -126,7 +126,7 @@ function Grid() {
             </div>
             <div className="card">
               <h3>#{milotic.id}</h3>
-              <img src={milotic.image} alt="milotic" />
+              <img className="mon" src={milotic.image} alt="milotic" />
               <h4>Milotic</h4>
               <div class="type-icons">
                 <img src={water} alt="water type" />
@@ -134,7 +134,7 @@ function Grid() {
             </div>
             <div className="card">
               <h3>#{roserade.id}</h3>
-              <img src={roserade.image} alt="roserade" />
+              <img className="mon" src={roserade.image} alt="roserade" />
               <h4>Roserade</h4>
               <div class="type-icons">
                 <img src={grass} alt="grass type" />
@@ -143,7 +143,7 @@ function Grid() {
             </div>
             <div className="card">
               <h3>#{lucario.id}</h3>
-              <img src={lucario.image} alt="lucario" />
+              <img className="mon" src={lucario.image} alt="lucario" />
               <h4>Lucario</h4>
               <div class="type-icons">
                 <img src={fighting} alt="fighting type" />
@@ -152,7 +152,7 @@ function Grid() {
             </div>
             <div className="card">
               <h3>#{weavile.id}</h3>
-              <img src={weavile.image} alt="weavile" />
+              <img className="mon" src={weavile.image} alt="weavile" />
               <h4>Weavile</h4>
               <div class="type-icons">
                 <img src={dark} alt="dark type" />
@@ -161,7 +161,7 @@ function Grid() {
             </div>
             <div className="card">
               <h3>#{togekiss.id}</h3>
-              <img src={togekiss.image} alt="togekiss" />
+              <img className="mon" src={togekiss.image} alt="togekiss" />
               <h4>Togekiss</h4>
               <div class="type-icons">
                 <img src={flying} alt="flying type" />
@@ -173,13 +173,13 @@ function Grid() {
               <img src={excadrill.image} alt="excadrill" />
               <h4>Excadrill</h4>
               <div class="type-icons">
-                <img src={ground} alt="ground type" />
+                <img className="mon" src={ground} alt="ground type" />
                 <img src={steel} alt="steel type" />
               </div>
             </div>
             <div className="card">
               <h3>#{volcarona.id}</h3>
-              <img src={volcarona.image} alt="volcarona" />
+              <img className="mon" src={volcarona.image} alt="volcarona" />
               <h4>Volcarona</h4>
               <div class="type-icons">
                 <img src={bug} alt="bug type" />
@@ -188,7 +188,7 @@ function Grid() {
             </div>
             <div className="card">
               <h3>#{cinderace.id}</h3>
-              <img src={cinderace.image} alt="Cinderace" />
+              <img className="mon" src={cinderace.image} alt="Cinderace" />
               <h4>Cinderace</h4>
               <div class="type-icons">
                 <img src={fire} alt="fire type" />
@@ -196,7 +196,7 @@ function Grid() {
             </div>
             <div className="card">
               <h3>#{dracovish.id}</h3>
-              <img src={dracovish.image} alt="Dracovish" />
+              <img className="mon" src={dracovish.image} alt="Dracovish" />
               <h4>Dracovish</h4>
               <div class="type-icons">
                 <img src={water} alt="water type" />

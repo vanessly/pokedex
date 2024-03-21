@@ -8,7 +8,7 @@
     margin: auto;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
 }
 
 .card {
@@ -17,8 +17,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(206, 133, 182, 0.2);
-    flex-basis: 45%;
-    min-height: 15rem;
+    flex-basis: 15rem;
     border-radius: 10px;
     box-shadow: 5px 5px 5px #999;
     transition: transform 0.15s ease-in-out;
@@ -54,6 +53,11 @@
 
 .card:hover {
     transform: scale(1.05);
+    & .mon {
+      animation: bounce2 2s ease-in-out infinite;
+      transition-duration: 0.7s;
+      transition-timing-function: ease-in-out;
+    }
 }
 
 .card > .type-icons {
@@ -62,6 +66,7 @@
   display: flex;
   gap: 5px;
 }
+
 .card > .type-icons > img {
   width: 7rem;
 }
@@ -76,4 +81,14 @@
       opacity: 1;
       transform: translateX(0);
     }
+}
+
+/* Animations */
+@keyframes bounce2 {
+  0%, 100% {
+    transform: translateY(4px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
 }
