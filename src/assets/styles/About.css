@@ -1,11 +1,6 @@
 /* App.css */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-@font-face {
-  font-family: PokemonPixel;
-  src: url("../pokemon_pixel_font.ttf");
-}
-
 .About {
     padding-bottom: 2rem;
 }
@@ -48,9 +43,9 @@
 }
 
 .container > h1 {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     text-align: left;
-    font-family: 'PokemonPixel', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: 400;
 }
 
@@ -76,6 +71,9 @@
 @media only screen and (min-width: 768px) {
   .container {
     width: 40rem;
+  }
+  .container > h1 {
+    font-size: 1.4rem;
   }
 }
 

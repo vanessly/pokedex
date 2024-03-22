@@ -21,6 +21,7 @@ import steel from '../assets/images/steel.png';
 import water from '../assets/images/water.png';
 
 function Grid() {
+  // Get info about each pokemon
   const milotic = usePokemonInfo('milotic');
   const cinderace = usePokemonInfo('cinderace');
   const snorlax = usePokemonInfo('snorlax');
@@ -37,11 +38,13 @@ function Grid() {
   const volcarona = usePokemonInfo('volcarona');
   const excadrill = usePokemonInfo('excadrill');
   const dracovish = usePokemonInfo('dracovish');
+
   if (!milotic || !cinderace || !snorlax || !lucario || !roserade || 
     !crobat || !togekiss || !espeon || !weavile || !raichu || !azumarill
     || !umbreon || !gengar || !volcarona || !excadrill || !dracovish) {
     return <div className="loading"></div>; // Show a loading message or spinner
   }
+  
   return (
     <div className="Grid">
         <div className="gallery">
@@ -150,10 +153,10 @@ function Grid() {
             </div>
             <div tabIndex="0" style={{ cursor: 'pointer' }}className="card">
               <h3>#{excadrill.id}</h3>
-              <img src={excadrill.image} alt="excadrill" />
+              <img className="mon" src={excadrill.image} alt="excadrill" />
               <h4>Excadrill</h4>
               <div class="type-icons">
-                <img className="mon" src={ground} alt="ground type" />
+                <img src={ground} alt="ground type" />
                 <img src={steel} alt="steel type" />
               </div>
             </div>
