@@ -20,7 +20,8 @@ const usePokemonInfo = (pokemonName) => {
                 })),
                 types: response.types.map(type => type.type.name),
                 abilities: response.abilities.map(ability => ability.ability.name),
-                weight: response.weight
+                weight: (Math.round(response.weight / 10 * 100) / 100).toFixed(1),
+                height: (Math.round(response.height / 10 * 100) / 100).toFixed(1)
             });
         });
     }, [pokemonName]); 

@@ -59,7 +59,7 @@
     transform: scale(1.05);
     background-color: rgba(206, 133, 182, 0.20);
     & .mon {
-      animation: bounce 1.7s ease-in-out infinite;
+      animation: bounce 1.3s ease-in-out infinite;
       transition-duration: 0.7s;
       transition-timing-function: ease-in-out;
     }
@@ -113,12 +113,12 @@
 
 /* Modal Content Box */
 .modal-content {
+  position: relative;
   background-color: #fff;
   border-radius: 15px;
   padding: 20px;
   width: 80%;
   max-width: 40rem;
-  position: relative;
   box-shadow: 5px 5px 10px #000;
 }
 

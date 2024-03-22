@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { FaTimes } from 'react-icons/fa';
 import '../assets/styles/Grid.css';
-import usePokemonInfo from '../utils/usePokemonInfo';
+import usePokemonInfo from '../hooks/usePokemonInfo';
 import bug from '../assets/images/bug.png';
 import dark from '../assets/images/dark.png';
 import dragon from '../assets/images/dragon.png';
@@ -283,12 +283,35 @@ function Grid() {
               </div>
             </div>
         </div>
+
+        {/* id: response.id,
+                name: response.name,
+                image: response.sprites.other['official-artwork'].front_default,
+                stats: response.stats.map(stat => ({
+                    name: stat.stat.name,
+                    value: stat.base_stat
+                })),
+                types: response.types.map(type => type.type.name),
+                abilities: response.abilities.map(ability => ability.ability.name),
+                weight: response.weight */}
         {selectedPokemon && (
           <div className="modal-overlay" onClick={closeModal}>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
               <span className="close-modal" onClick={closeModal}><FaTimes /></span>
               <h2>{selectedPokemon.name}</h2>
               <p>#ID: {selectedPokemon.id}</p>
+              {/* <p>stats: {selectedPokemon.stats}</p> */}
+              <ul>
+                {selectedPokemon.stats.map((stat, index) => (
+                  <li key={index}>
+                    {stat.name}: {stat.value}
+                  </li>
+                ))}
+              </ul>
+              <p>types: {selectedPokemon.types}</p>
+              <p>abilities: {selectedPokemon.abilities}</p>
+              <p>weight: {selectedPokemon.weight}</p>
+              <p>height: {selectedPokemon.height}</p>
             </div>
           </div>
         )}

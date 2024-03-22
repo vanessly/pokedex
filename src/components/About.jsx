@@ -10,7 +10,7 @@ function About() {
         <div tabIndex="0" className="container">
             <img src={LoveBall} className="pokeball" alt="Pokeball" />
             <h1>Being an avid fan since childhood, here is a mini Pokedex of my all-time favorite Pokemon. Click on each card to learn more about that Pokemon. Enjoy!</h1>
-        </div>
+         </div>
     </div>
   );
 }
