@@ -1,5 +1,11 @@
 /* App.css */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@font-face {
+  font-family: PokemonPixel;
+  src: url("../pokemon_pixel_font.ttf");
+}
+
 .About {
     padding-bottom: 2rem;
 }
@@ -24,40 +30,58 @@
     max-width: 6rem;
     -webkit-filter: drop-shadow(3px 3px 3px #999);
     filter: drop-shadow(3px 3px 3px #999);
-    animation: bounce 2s ease-in-out infinite;
-    transition-duration: 0.7s;
-    transition-timing-function: ease-in-out;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
 }
 
-.container > img:hover {
-    rotate: 360deg;
+.container:hover, .container:focus {
+  -webkit-filter: drop-shadow(3px 3px 3px #f5e371);
+  filter: drop-shadow(3px 3px 8px #f5e371);
+  transition-duration: 0.4s;
+  transition-timing-function: ease-out;
+  & img {
+    animation: shake 0.5s forwards;
+    -webkit-filter: drop-shadow(3px 3px 3px #f5e371);
+    filter: drop-shadow(3px 3px 8px #f5e371);
+  }
+
 }
 
 .container > h1 {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     text-align: left;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'PokemonPixel', sans-serif;
     font-weight: 400;
 }
 
 /* Animations */
-@keyframes bounce {
-    0%, 100% {
-      transform: translateY(3px);
-    }
-    50% {
-      transform: translateY(-3px);
-    }
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  30% {
+    transform: translateX(-5px) rotate(-15deg);
+  }
+  60% {
+    transform: translateX(5px) rotate(15deg);
+  }
 }
 
-@keyframes slideFromLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-50px); /* Elements slide in from the left */
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+
+/* Small Media Query */
+@media only screen and (max-width: 640px) {
 }
-  
+
+/* Medium Media Query */
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 40rem;
+  }
+}
+
+/* Large Media Query */
+@media only screen and (min-width: 1024px) {
+  .container {
+    width: 40rem;
+  }
+}
