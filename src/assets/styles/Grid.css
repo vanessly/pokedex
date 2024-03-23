@@ -45,14 +45,15 @@
   border-radius: 80px;
 }
 
-.card > h4 {
+h4 {
   font-family: 'Orbitron', sans-serif;
-  line-height: 0;
+  line-height: 1;
   font-size: 1.35rem;
   padding-left: 0.9rem;
   font-weight: 500;
   padding: 0;
   margin: 0;
+  text-transform: capitalize;
 }
 
 .card:hover, .card:focus {
@@ -114,14 +115,56 @@
 /* Modal Content Box */
 .modal-content {
   position: relative;
-  background-color: #fff;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,223,245,1) 100%);
+  border: 3px solid #000;
   border-radius: 15px;
   padding: 20px;
+  padding-top: 40px;
   width: 80%;
   max-width: 40rem;
-  box-shadow: 5px 5px 10px #000;
+  /* box-shadow: 5px 5px 10px #000; */
 }
 
+.info-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.first-half {
+  flex-basis: 30%;
+}
+
+.first-half h4 {
+  font-size: 1.45rem;
+}
+.first-half > img {
+  max-width: 13rem;
+  background: rgb(255,255,255);
+  background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  border-radius: 40%;
+  padding: 5px;
+  margin-top: 8px;
+  box-shadow: 5px 5px 5px #99999977;
+}
+
+.second-half {
+  flex-basis: 70%;
+}
+
+.desc {
+  padding: 1px;
+  border-radius: 12px;
+  box-shadow: 5px 5px 5px #99999977;
+  margin-bottom: 20px;
+}
+
+.desc p {
+  font-size: 1.1rem;
+}
 /* Close button */
 .close-modal {
   position: absolute;
