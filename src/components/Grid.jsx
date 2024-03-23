@@ -21,6 +21,23 @@ import poison from '../assets/images/poison.png';
 import psychic from '../assets/images/psychic.png';
 import steel from '../assets/images/steel.png';
 import water from '../assets/images/water.png';
+import bug_icon from '../assets/images/Bug_icon_SwSh.png'
+import dark_icon from '../assets/images/Dark_icon_SwSh.png'
+import dragon_icon from '../assets/images/Dragon_icon_SwSh.png'
+import electric_icon from '../assets/images/Electric_icon_SwSh.png'
+import fairy_icon from '../assets/images/Fairy_icon_SwSh.png'
+import fighting_icon from '../assets/images/Fighting_icon_SwSh.png'
+import fire_icon from '../assets/images/Fire_icon_SwSh.png'
+import flying_icon from '../assets/images/Flying_icon_SwSh.png'
+import ghost_icon from '../assets/images/Ghost_icon_SwSh.png'
+import grass_icon from '../assets/images/Grass_icon_SwSh.png'
+import ground_icon from '../assets/images/Ground_icon_SwSh.png'
+import ice_icon from '../assets/images/Ice_icon_SwSh.png'
+import normal_icon from '../assets/images/Normal_icon_SwSh.png'
+import poison_icon from '../assets/images/Poison_icon_SwSh.png'
+import psychic_icon from '../assets/images/Psychic_icon_SwSh.png'
+import steel_icon from '../assets/images/Steel_icon_SwSh.png'
+import water_icon from '../assets/images/Water_icon_SwSh.png'
 
 function Grid() {
   // Get info about each pokemon
@@ -40,7 +57,26 @@ function Grid() {
   const volcarona = usePokemonInfo('volcarona');
   const excadrill = usePokemonInfo('excadrill');
   const dracovish = usePokemonInfo('dracovish');
-
+  const type_mappings = {
+    "bug": [bug, bug_icon],
+    "dark": [dark, dark_icon],
+    "dragon": [dragon, dragon_icon],
+    "electric": [electric, electric_icon],
+    "fairy": [fairy, fairy_icon],
+    "fighting": [fighting, fighting_icon],
+    "fire": [fire, fire_icon],
+    "flying": [flying, flying_icon],
+    "ghost": [ghost, ghost_icon],
+    "grass": [grass, grass_icon],
+    "ground": [ground, ground_icon],
+    "ice": [ice, ice_icon],
+    "normal": [normal, normal_icon],
+    "poison": [poison, poison_icon],
+    "psychic": [psychic, psychic_icon],
+    "steel": [steel, steel_icon],
+    "water": [water, water_icon]
+  }
+  const pokemonGallery = [raichu, gengar, snorlax, crobat, azumarill, espeon, umbreon, milotic, roserade, lucario, weavile, togekiss, excadrill, volcarona, cinderace, dracovish];
 
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const focusableElements = document.querySelectorAll('.card, .container');
@@ -72,224 +108,23 @@ function Grid() {
   return (
     <div className="Grid">
         <div className="gallery">
-            <div role="button" tabIndex="0" style={{ cursor: 'pointer' }} className="card" onClick={() => handleCardClick(raichu)} 
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(raichu);
-              }
-            }}>
-                <h3>#{raichu.id}</h3>
-                <img className="mon" src={raichu.image} alt="raichu" />
-                <h4>Raichu</h4>
-                <div class="type-icons">
-                  <img src={electric} alt="electric type" />
-                </div>
-            </div>
-            <div tabIndex="0" style={{ cursor: 'pointer' }} className="card" onClick={() => handleCardClick(gengar)}
-              onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(gengar);
-              }
-            }}>
-                <h3>#{gengar.id}</h3>
-                <img className="mon" src={gengar.image} alt="gengar" />
-                <h4>Gengar</h4>
-                <div class="type-icons">
-                  <img src={ghost} alt="ghost type" />
-                  <img src={poison} alt="poison type" />
-                </div>
-            </div>
-            <div tabIndex="0" style={{ cursor: 'pointer' }} className="card" onClick={() => handleCardClick(snorlax)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(snorlax);
-              }
-            }}>
-              <h3>#{snorlax.id}</h3>
-              <img className="mon" src={snorlax.image} alt="Snorlax" />
-              <h4>Snorlax</h4>
-              <div class="type-icons">
-                <img src={normal} alt="normal type" />
+            {pokemonGallery.map(currPokemon => (
+              <div role="button" tabIndex="0" style={{ cursor: 'pointer' }} className="card" onClick={() => handleCardClick(currPokemon)} 
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      handleCardClick(currPokemon);
+                    }
+                  }}>
+                  <h3>#{currPokemon.id}</h3>
+                  <img className="mon" src={currPokemon.image} alt={currPokemon.name} />
+                  <h4>{currPokemon.name}</h4>
+                  <div class="type-icons">
+                    {currPokemon.types.map(type => (
+                      <img src={type_mappings[type][0]} alt={type} />
+                    ))}
+                  </div>
               </div>
-            </div>
-            <div tabIndex="0" style={{ cursor: 'pointer' }} className="card" onClick={() => handleCardClick(crobat)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(crobat);
-              }
-            }}>
-              <h3>#{crobat.id}</h3>
-              <img className="mon" src={crobat.image} alt="Crobat" />
-              <h4>Crobat</h4>
-              <div class="type-icons">
-                <img src={poison} alt="poison type" />
-                <img src={flying} alt="flying type" />
-              </div>
-            </div>
-            <div tabIndex="0" style={{ cursor: 'pointer' }}className="card" onClick={() => handleCardClick(azumarill)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(azumarill);
-              }
-            }}>
-              <h3>#{azumarill.id}</h3>
-              <img className="mon" src={azumarill.image} alt="Azumarill" />
-              <h4>Azumarill</h4>
-              <div class="type-icons">
-                <img src={water} alt="water type" />
-                <img src={fairy} alt="fairy type" />
-              </div>
-            </div>
-            <div tabIndex="0" style={{ cursor: 'pointer' }}className="card" onClick={() => handleCardClick(espeon)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(espeon);
-              }
-            }}>
-              <h3>#{espeon.id}</h3>
-              <img className="mon" src={espeon.image} alt="Espeon" />
-              <h4>Espeon</h4>
-              <div class="type-icons">
-                <img src={psychic} alt="psychic type" />
-              </div>
-            </div>
-            <div tabIndex="0" style={{ cursor: 'pointer' }}className="card" onClick={() => handleCardClick(umbreon)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(umbreon);
-              }
-            }}>
-              <h3>#{umbreon.id}</h3>
-              <img className="mon" src={umbreon.image} alt="Umbreon" />
-              <h4>Umbreon</h4>
-              <div class="type-icons">
-                <img src={dark} alt="dark type" />
-              </div>
-            </div>
-            <div tabIndex="0" style={{ cursor: 'pointer' }}className="card" onClick={() => handleCardClick(milotic)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(milotic);
-              }
-            }}>
-              <h3>#{milotic.id}</h3>
-              <img className="mon" src={milotic.image} alt="milotic" />
-              <h4>Milotic</h4>
-              <div class="type-icons">
-                <img src={water} alt="water type" />
-              </div>
-            </div>
-            <div tabIndex="0" style={{ cursor: 'pointer' }}className="card" onClick={() => handleCardClick(roserade)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(roserade);
-              }
-            }}>
-              <h3>#{roserade.id}</h3>
-              <img className="mon" src={roserade.image} alt="roserade" />
-              <h4>Roserade</h4>
-              <div class="type-icons">
-                <img src={grass} alt="grass type" />
-                <img src={poison} alt="poison type" />
-              </div>
-            </div>
-            <div tabIndex="0" style={{ cursor: 'pointer' }}className="card" onClick={() => handleCardClick(lucario)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(lucario);
-              }
-            }}>
-              <h3>#{lucario.id}</h3>
-              <img className="mon" src={lucario.image} alt="lucario" />
-              <h4>Lucario</h4>
-              <div class="type-icons">
-                <img src={fighting} alt="fighting type" />
-                <img src={steel} alt="steel type" />
-              </div>
-            </div>
-            <div tabIndex="0" style={{ cursor: 'pointer' }}className="card" onClick={() => handleCardClick(weavile)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(weavile);
-              }
-            }}>
-              <h3>#{weavile.id}</h3>
-              <img className="mon" src={weavile.image} alt="weavile" />
-              <h4>Weavile</h4>
-              <div class="type-icons">
-                <img src={dark} alt="dark type" />
-                <img src={ice} alt="ice type" />
-              </div>
-            </div>
-            <div tabIndex="0" style={{ cursor: 'pointer' }}className="card" onClick={() => handleCardClick(togekiss)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(togekiss);
-              }
-            }}>
-              <h3>#{togekiss.id}</h3>
-              <img className="mon" src={togekiss.image} alt="togekiss" />
-              <h4>Togekiss</h4>
-              <div class="type-icons">
-                <img src={flying} alt="flying type" />
-                <img src={fairy} alt="fairy type" />
-              </div>
-            </div>
-            <div tabIndex="0" style={{ cursor: 'pointer' }}className="card" onClick={() => handleCardClick(excadrill)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(excadrill);
-              }
-            }}>
-              <h3>#{excadrill.id}</h3>
-              <img className="mon" src={excadrill.image} alt="excadrill" />
-              <h4>Excadrill</h4>
-              <div class="type-icons">
-                <img src={ground} alt="ground type" />
-                <img src={steel} alt="steel type" />
-              </div>
-            </div>
-            <div tabIndex="0" style={{ cursor: 'pointer' }} className="card" onClick={() => handleCardClick(volcarona)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(volcarona);
-              }
-            }}>
-              <h3>#{volcarona.id}</h3>
-              <img className="mon" src={volcarona.image} alt="volcarona" />
-              <h4>Volcarona</h4>
-              <div class="type-icons">
-                <img src={bug} alt="bug type" />
-                <img src={fire} alt="fire type" />
-              </div>
-            </div>
-            <div tabIndex="0" style={{ cursor: 'pointer' }}className="card" onClick={() => handleCardClick(cinderace)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(cinderace);
-              }
-            }}>
-              <h3>#{cinderace.id}</h3>
-              <img className="mon" src={cinderace.image} alt="Cinderace" />
-              <h4>Cinderace</h4>
-              <div class="type-icons">
-                <img src={fire} alt="fire type" />
-              </div>
-            </div>
-            <div tabIndex="0" style={{ cursor: 'pointer' }}className="card" onClick={() => handleCardClick(dracovish)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleCardClick(dracovish);
-              }
-            }}>
-              <h3>#{dracovish.id}</h3>
-              <img className="mon" src={dracovish.image} alt="Dracovish" />
-              <h4>Dracovish</h4>
-              <div class="type-icons">
-                <img src={water} alt="water type" />
-                <img src={dragon} alt="dragon type" />
-              </div>
-            </div>
+            ))}
         </div>
 
         {selectedPokemon && (
@@ -304,13 +139,34 @@ function Grid() {
                 <div className="first-half">
                   <h4 id="card-title">{selectedPokemon.name}</h4>
                   <img src={selectedPokemon.image} alt={selectedPokemon.name} />
+                  <div className="type-icons">
+                    {selectedPokemon.types.map(type => (
+                      <div className="icons">
+                        <img src={type_mappings[type][1]} alt={type} />
+                        <div className="tooltip">
+                          <p>{type}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="dimensions">
+                    <p><b>Height:</b> {selectedPokemon.height} m</p>
+                    <p><b>Weight:</b> {selectedPokemon.weight} kg</p>
+                  </div>
+                  <h3>Abilities</h3>
+                  <ul className="abilities">
+                    {selectedPokemon.abilities.map(ability => (
+                      <li>{ability}</li>
+                    ))}
+                  </ul>
                 </div>
                 <div className="second-half">
+                  <h3>About</h3>
                   <div className="desc">
-                    <p>{selectedPokemon.desc}</p>
+                    <p>{selectedPokemon.desc.replace(/\\f/g, '')}</p>
                   </div>
-                  {console.log(selectedPokemon)}
-                  {<PokemonStats tabIndex="0" selectedPokemon={selectedPokemon} />}
+                  <h3>Base Stats</h3>
+                  {<PokemonStats selectedPokemon={selectedPokemon} />}
                 </div>
               </div>
             </div>

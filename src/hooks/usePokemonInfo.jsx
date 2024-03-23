@@ -26,7 +26,7 @@ const usePokemonInfo = (pokemonName) => {
                     abilities: response.abilities.map(ability => ability.ability.name),
                     weight: (Math.round(response.weight / 10 * 100) / 100).toFixed(1), // Convert to kg
                     height: (Math.round(response.height / 10 * 100) / 100).toFixed(1), // Convert to meters
-                    desc: speciesResponse.flavor_text_entries.find(entry => entry.language.name === "en").flavor_text
+                    desc: speciesResponse.flavor_text_entries.find(entry => entry.language.name === "en").flavor_text.replace(/[\n\f]/g, ' ')
                 });
             } catch (error) {
                 console.error("Failed to fetch pokemon or species info:", error);
