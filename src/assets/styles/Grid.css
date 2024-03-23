@@ -175,18 +175,36 @@ h4 {
 }
 
 .tooltip {
-  position: relative;
-  top: -10px;
-  background-color: #444;
-  border-radius: 3px;
+  position: absolute;
 }
 
-.tooltip > p {
-  line-height: 1;
-  padding: 5px;
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  bottom: 95%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #000000cb transparent;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  line-height: 0;
   color: #fff;
+  font-size: 0.8rem;
+  background-color: #000000cb;
+  border-radius: 3px;
+  text-align: center;
+  padding: 2px 4px;
+  box-shadow: 2px 2px 2px #00000075;
 }
 
+.icons:hover .tooltip-text, .icons:focus .tooltip-text {
+  visibility: visible;
+  animation: fade 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
 .first-half > h3 {
   font-family: 'Rubik', sans-serif;
   line-height: 1;
@@ -194,6 +212,7 @@ h4 {
   font-weight: 500;
   padding: 0;
   margin: 0;
+  z-index: 1;
 }
 .first-half > .type-icons > .icons > img {
   max-width: 3rem;

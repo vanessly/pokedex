@@ -141,10 +141,10 @@ function Grid() {
                   <img src={selectedPokemon.image} alt={selectedPokemon.name} />
                   <div className="type-icons">
                     {selectedPokemon.types.map(type => (
-                      <div className="icons">
-                        <img src={type_mappings[type][1]} alt={type} />
+                      <div tabIndex="0" className="icons">
+                        <img className="type" src={type_mappings[type][1]} alt={type} />
                         <div className="tooltip">
-                          <p>{type}</p>
+                          <span className="tooltip-text">{type}</span>
                         </div>
                       </div>
                     ))}
