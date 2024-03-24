@@ -115,7 +115,6 @@ h4 {
   overflow-y: auto;
   max-width: 50rem;
   box-shadow: 5px 5px 10px #555;
-  /* animation: fade 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards; */
 }
 
 .info-card {
@@ -155,6 +154,7 @@ h4 {
 
 .dimensions > p {
   line-height: 0.5;
+  animation: fade 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
 }
 
 .abilities {
@@ -163,6 +163,7 @@ h4 {
   border-radius: 12px;
   background-color: #ffffff8c;
   box-shadow: 5px 5px 5px #99999977;
+  animation: fade 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
 }
 .abilities > li {
   line-height: 1.3;

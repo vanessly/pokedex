@@ -107,7 +107,7 @@ function Grid() {
   
   return (
     <div className="Grid">
-        <div className="gallery">
+        <div id="main" className="gallery">
             {pokemonGallery.map(currPokemon => (
               <div role="button" tabIndex="0" style={{ cursor: 'pointer' }} className="card" onClick={() => handleCardClick(currPokemon)} 
                   onKeyDown={(e) => {
