@@ -4,6 +4,7 @@
   background-image: url("../images/bg.png");
   background-repeat: repeat;
   min-height: 100vh;
+  padding-top: 1rem;
 }
 
 

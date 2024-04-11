@@ -1,5 +1,8 @@
 /* Grid.css */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+.Grid {
+  margin-bottom: 2rem;
+}
 .gallery {
     display: flex;
     flex-direction: row;
@@ -20,8 +23,8 @@
     flex-basis: 15rem;
     border-radius: 10px;
     box-shadow: 5px 5px 5px #999;
-    animation: slideFromRight 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
-    transition: transform 0.6s;
+    animation: growAndBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.4s;
     transform-style: preserve-3d;
 }
 
@@ -115,6 +118,7 @@ h4 {
   overflow-y: auto;
   max-width: 50rem;
   box-shadow: 5px 5px 10px #555;
+  
 }
 
 .info-card {
@@ -264,6 +268,10 @@ h4 {
   overflow: hidden;
 }
 
+.loading {
+  height: 100vh;
+}
+
 /* Animations */
 @keyframes bounce {
   0%, 100% {
@@ -294,6 +302,18 @@ h4 {
     transform: translateY(0);
   }
 }
+
+@keyframes growAndBounce {
+  0% {
+    opacity: 0;
+    transform: scale(.5);
+  }
+  100% {
+    transform: scale(1); 
+    opacity: 1;
+  }
+}
+
 
 /* Small Media Query */
 @media only screen and (max-width: 640px) {

@@ -1,5 +1,6 @@
 // Grid.jsx
 import React, { useState, useEffect } from "react";
+import About from './About'
 import { FaTimes } from 'react-icons/fa';
 import '../assets/styles/Grid.css';
 import PokemonStats from '../components/PokemonStats';
@@ -106,7 +107,8 @@ function Grid() {
   }
   
   return (
-    <div className="Grid">
+    <div className="Grid active">
+        <About />
         <div id="main" className="gallery">
             {pokemonGallery.map(currPokemon => (
               <div role="button" tabIndex="0" style={{ cursor: 'pointer' }} className="card" onClick={() => handleCardClick(currPokemon)} 

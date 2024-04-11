@@ -13,7 +13,7 @@
   text-transform: uppercase;
   z-index: 1;
   transition-duration: 1s;
-  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-timing-function: fade cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .skip:focus, .skip:hover {
@@ -22,15 +22,55 @@
 }
 
 header {
-    padding-top: 2rem;
-    padding-bottom: 1.5rem;
+  padding-top: 1rem;
 }
 
 .logo {
     width: 22rem;
     -webkit-filter: drop-shadow(3px 3px 3px #999);
     filter: drop-shadow(3px 3px 3px #999);
-    animation: slideFromLeft 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    animation: growAndBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding-bottom: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  background-color: #fff;
+  width: 13rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  padding: 1.2rem;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px #999;
+  justify-content: space-around;
+  border: solid #000000 3px;
+  gap: 1rem;
+  animation: growAndBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-links > li {
+  list-style-type: none;
+  font-size: 1.1rem;
+  color: #333;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+}
+
+.link, .link:visited {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #ab6884;
+}
+
+.active-link {
+  border-bottom: solid #000 2.5px;
 }
 
 /* Animations */
@@ -49,6 +89,12 @@ header {
 @media only screen and (min-width: 640px) {
   .logo {
     width: 27rem;
+  }
+  .nav-links {
+    width: 17rem;
+  }
+  .nav-links > li {
+    font-size: 1.3rem;
   }
 }
 

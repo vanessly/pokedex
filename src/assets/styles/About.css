@@ -11,14 +11,11 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    background-color: #fff;
-    border: solid #000 3px;
     width: 85%;
     padding: 10px;
     margin: auto;
     border-radius: 15px;
-    box-shadow: 4px 4px 10px #999;
-    animation: slideFromLeft 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    animation: growAndBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .container > img {
@@ -29,17 +26,10 @@
     transition-timing-function: ease-out;
 }
 
-.container:hover, .container:focus {
-  -webkit-filter: drop-shadow(3px 3px 3px #f5e371);
-  filter: drop-shadow(3px 3px 8px #f5e371);
-  transition-duration: 0.4s;
-  transition-timing-function: ease-out;
-  & img {
+.pokeball:hover, .pokeball:focus {
     animation: shake 0.5s forwards;
-    -webkit-filter: drop-shadow(3px 3px 3px #f5e371);
+    -webkit-filter: drop-shadow(3px 3px 3px #fbee9c);
     filter: drop-shadow(3px 3px 8px #f5e371);
-  }
-
 }
 
 .container > h1 {
@@ -47,6 +37,7 @@
     text-align: left;
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
+    line-height: 1.7rem;
 }
 
 /* Animations */

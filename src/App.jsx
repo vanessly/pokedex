@@ -1,19 +1,26 @@
 // App.jsx
 import 'normalize.css';
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import './assets/styles/App.css';
 import Header from './components/Header'
-import About from './components/About'
-import Grid from './components/Grid'
 import Footer from './components/Footer'
+import Grid from './components/Grid'
+import AboutMe from './components/AboutMe'
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <About />
-      <Grid />
-      <Footer />
+      <a href="#main" tabIndex="0" className="skip">Skip to Main Content</a>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Grid />} />
+          <Route path="/about" element={<AboutMe />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

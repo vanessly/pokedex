@@ -1,0 +1,64 @@
+.AboutMe {
+    height: calc(100vh - 12rem);
+}
+.about-bg {
+    position: relative;
+    margin: auto;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,223,245,1) 100%);
+    border: 3px solid #000;
+    border-radius: 15px;
+    padding: 20px;
+    width: 80%;
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+    max-width: 50rem;
+    box-shadow: 5px 5px 10px #555;
+    animation: growAndBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about-info img {
+    width: 20rem;
+    margin: 1rem;
+    border-radius: 40%;
+    box-shadow: 5px 5px 5px #99999977;
+    animation: slideFromLeft 1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.8rem;
+    line-height: 100%;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.about-info p {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.35rem;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    animation: slideFromRight 1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+/* Medium Media Query */
+@media only screen and (min-width: 768px) {
+    
+}
+
+/* Large Media Query */
+@media only screen and (min-width: 1024px) {
+
+}
+
+@keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100;
+    }
+  }
