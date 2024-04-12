@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <a href="#main" tabIndex="0" className="skip">Skip to Main Content</a>
-      <BrowserRouter basename="/si339finalproject">
+      <BrowserRouter basename="/si339finalproj-pokedex">
         <Header />
         <Routes>
           <Route path="/" element={<Grid />} />
