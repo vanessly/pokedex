@@ -1,7 +1,7 @@
 // AboutMe.jsx
 import React, { useState, useEffect } from "react";
 import '../assets/styles/AboutMe.css';
-import cc_img from '../assets/images/cc.HEIC';
+import cc_img from '../assets/images/cc.png';
 
 
 function AboutMe() {
