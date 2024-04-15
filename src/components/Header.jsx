@@ -9,7 +9,6 @@ function Header() {
   return (
     <div className="Header">
       <NavBar />
-      <a href="#main" tabIndex="0" className="skip">Skip to Main Content</a>
       <header>
         <img src={logo} className="logo" alt="logo" />
       </header>

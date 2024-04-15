@@ -3,6 +3,27 @@
 .Grid {
   margin-bottom: 2rem;
 }
+
+.sort-label {
+  padding-bottom: 2rem;
+  animation: slideFromLeft 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+label[for="sort"] {
+  color: #333;
+  font-weight: 700;
+  margin-right: 10px;
+  font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#sort {
+  font-family: 'Rubik', sans-serif;
+  background-color: #fff;
+  background-image: none;
+  font-size: 1.1rem;
+}
+
 .gallery {
     display: flex;
     flex-direction: row;
@@ -271,6 +292,7 @@ h4 {
 .loading {
   height: 100vh;
 }
+
 
 /* Animations */
 @keyframes bounce {

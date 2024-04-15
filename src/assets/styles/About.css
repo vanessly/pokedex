@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 .About {
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 .container {
     display: flex;
@@ -15,7 +15,7 @@
     padding: 10px;
     margin: auto;
     border-radius: 15px;
-    animation: growAndBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: slideFromRight 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
 }
 
 .container > img {

@@ -78,9 +78,26 @@ function Grid() {
     "water": [water, water_icon]
   }
   const pokemonGallery = [raichu, gengar, snorlax, crobat, azumarill, espeon, umbreon, milotic, roserade, lucario, weavile, togekiss, excadrill, volcarona, cinderace, dracovish];
-
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const focusableElements = document.querySelectorAll('.card, .container');
+  const [sortOption, setSortOption] = useState('id');
+
+  function sortPokemon(option) {
+    let sortedPokemon = [...pokemonGallery]; 
+    switch (option) {
+      case 'name':
+        sortedPokemon.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case 'type':
+        sortedPokemon.sort((a, b) => a.types[0].localeCompare(b.types[0]));
+        break;
+      default:
+        sortedPokemon.sort(function(a, b){return a.id - b.id});
+        break;
+    }
+    return sortedPokemon;
+  }
+
 
   const handleCardClick = pokemon => {
     focusableElements.forEach((element) => {
@@ -103,31 +120,40 @@ function Grid() {
   if (!milotic || !cinderace || !snorlax || !lucario || !roserade || 
     !crobat || !togekiss || !espeon || !weavile || !raichu || !azumarill
     || !umbreon || !gengar || !volcarona || !excadrill || !dracovish) {
-    return <div className="loading"></div>; // Show a loading message or spinner
+    return <div className="loading"></div>;
   }
   
   return (
     <div className="Grid active">
         <About />
-        <div id="main" className="gallery">
-            {pokemonGallery.map(currPokemon => (
-              <div role="button" tabIndex="0" style={{ cursor: 'pointer' }} className="card" onClick={() => handleCardClick(currPokemon)} 
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
-                      handleCardClick(currPokemon);
-                    }
-                  }}>
-                  <h3>#{currPokemon.id}</h3>
-                  <img className="mon" src={currPokemon.image} alt={currPokemon.name} />
-                  <h4>{currPokemon.name}</h4>
-                  <div class="type-icons">
-                    {currPokemon.types.map(type => (
-                      <img src={type_mappings[type][0]} alt={type} />
-                    ))}
-                  </div>
-              </div>
-            ))}
+        <div class="sort-label">
+          <label htmlFor="sort">Sort by: </label>
+          <select id="sort" value={sortOption} onChange={e => setSortOption(e.target.value)}>
+            <option value="id">ID</option>
+            <option value="name">Name</option>
+            <option value="type">Type</option>
+          </select>
         </div>
+        <div id="main" className="gallery">
+          {sortPokemon(sortOption).map(currPokemon => (
+            <div key={`${sortOption}-${currPokemon.id}`} role="button" tabIndex="0" style={{ cursor: 'pointer' }} className="card" 
+                 onClick={() => handleCardClick(currPokemon)} 
+                 onKeyDown={(e) => {
+                   if (e.key === 'Enter') {
+                     handleCardClick(currPokemon);
+                   }
+                 }}>
+                <h3>#{currPokemon.id}</h3>
+                <img className="mon" src={currPokemon.image} alt={currPokemon.name} />
+                <h4>{currPokemon.name}</h4>
+                <div class="type-icons">
+                  {currPokemon.types.map(type => (
+                    <img src={type_mappings[type][0]} alt={type} />
+                  ))}
+                </div>
+            </div>
+          ))}
+      </div>
 
         {selectedPokemon && (
           <div className="modal-overlay" onClick={closeModal}>
