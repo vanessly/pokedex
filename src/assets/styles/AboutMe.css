@@ -1,5 +1,5 @@
 .AboutMe {
-    height: calc(100vh - 12rem);
+    min-height: 100vh;
 }
 .about-bg {
     position: relative;
@@ -68,6 +68,9 @@ h1 {
         flex-wrap: nowrap;
         justify-content: center;
         gap: 1rem;
+    }
+    .AboutMe {
+        min-height: calc(100vh - 12rem);
     }
 }
 
