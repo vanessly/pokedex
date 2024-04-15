@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/si339finalproj-pokedex/static/css/main.2755c42d.css",
-    "main.js": "/si339finalproj-pokedex/static/js/main.88473123.js",
+    "main.css": "/si339finalproj-pokedex/static/css/main.4ba43a57.css",
+    "main.js": "/si339finalproj-pokedex/static/js/main.cd7cbbc3.js",
     "static/js/453.f8cf1e2e.chunk.js": "/si339finalproj-pokedex/static/js/453.f8cf1e2e.chunk.js",
     "static/media/cc.png": "/si339finalproj-pokedex/static/media/cc.f74d10fd2a9b144c9dde.png",
     "static/media/loveball.png": "/si339finalproj-pokedex/static/media/loveball.c0b5d1db7bdd86a5f8f1.png",
     "static/media/logo.png": "/si339finalproj-pokedex/static/media/logo.5c9967afe7485a5d1875.png",
     "static/media/bg.png": "/si339finalproj-pokedex/static/media/bg.d34ff86cb412ba3099d1.png",
     "index.html": "/si339finalproj-pokedex/index.html",
-    "main.2755c42d.css.map": "/si339finalproj-pokedex/static/css/main.2755c42d.css.map",
-    "main.88473123.js.map": "/si339finalproj-pokedex/static/js/main.88473123.js.map",
+    "main.4ba43a57.css.map": "/si339finalproj-pokedex/static/css/main.4ba43a57.css.map",
+    "main.cd7cbbc3.js.map": "/si339finalproj-pokedex/static/js/main.cd7cbbc3.js.map",
     "453.f8cf1e2e.chunk.js.map": "/si339finalproj-pokedex/static/js/453.f8cf1e2e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2755c42d.css",
-    "static/js/main.88473123.js"
+    "static/css/main.4ba43a57.css",
+    "static/js/main.cd7cbbc3.js"
   ]
 }
