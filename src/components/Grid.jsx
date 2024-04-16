@@ -58,6 +58,7 @@ function Grid() {
   const volcarona = usePokemonInfo('volcarona');
   const excadrill = usePokemonInfo('excadrill');
   const dracovish = usePokemonInfo('dracovish');
+
   const type_mappings = {
     "bug": [bug, bug_icon],
     "dark": [dark, dark_icon],
@@ -79,7 +80,7 @@ function Grid() {
   }
   const pokemonGallery = [raichu, gengar, snorlax, crobat, azumarill, espeon, umbreon, milotic, roserade, lucario, weavile, togekiss, excadrill, volcarona, cinderace, dracovish];
   const [selectedPokemon, setSelectedPokemon] = useState(null);
-  const focusableElements = document.querySelectorAll('.card, .container');
+  let focusableElements = document.querySelectorAll('.card, .container, a, .link, select');
   const [sortOption, setSortOption] = useState('id');
 
   function sortPokemon(option) {
@@ -101,7 +102,7 @@ function Grid() {
 
   const handleCardClick = pokemon => {
     focusableElements.forEach((element) => {
-      element.tabIndex = -1;
+      element.tabIndex = '-1';
     });
     setSelectedPokemon(pokemon);
     document.body.classList.add('no-scroll');
