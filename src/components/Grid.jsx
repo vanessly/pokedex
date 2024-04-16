@@ -157,7 +157,11 @@ function Grid() {
       </div>
 
         {selectedPokemon && (
-          <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-overlay" onClick={closeModal} onKeyDown={(e) => {
+            if (e.key === 'Escape') {
+              closeModal();
+            }
+          }}>
             <div tabIndex="0" className="modal-content" onClick={e => e.stopPropagation()}>
               <span tabIndex="0" className="close-modal" onKeyDown={(e) => {
               if (e.key === 'Enter') {
